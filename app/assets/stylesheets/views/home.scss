@@ -18,8 +18,16 @@ $light-gray: #777;
   }
 }
 
-.container {
-  width: 90%;
+header {
+  .navbar {
+    height: 15vh;
+  }
+  .container {
+    width: 90%;
+  }
+  .items-bar {
+    width: 90%;
+  }
 }
 
 // home
@@ -27,7 +35,25 @@ $light-gray: #777;
 .home {
   #myCarousel {
     width: 100%;
-    height: 100%;
-    margin-top: 7vh;
+    margin-top: 13vh;
+  }
+  .carousel-img {
+    width: 100%;
+  }
+}
+
+// footer
+#footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: black;
+  width: 100%;
+  height: 40px;
+
+  footer p {
+    color: white;
+    text-align: center;
+    margin-top: 12px;
   }
 }
