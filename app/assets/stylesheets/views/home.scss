@@ -56,3 +56,12 @@ header {
     margin-top: 12px;
   }
 }
+
+// items
+.items-row {
+  margin-bottom: 10vh;
+
+  &:hover {
+    border: 1px solid black;
+  }
+}

@@ -1,0 +1,8 @@
+
+<div class="items-row col-sm-4 text-center">
+  <%= link_to category_item_path(item.category, item) do%>
+    <%=image_tag item.image, class: "item-image"%> <br />
+    <%=item.title%>
+    <%=item.price%>
+  <%end%>
+</div>
