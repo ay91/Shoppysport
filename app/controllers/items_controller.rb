@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
 
   def index
     @category = Category.find_by(id: params[:category_id])
-    @items = @category.items.all
+    @items = @category.items.order(created_at: :asc).page params[:page]
   end
 
   def show
@@ -11,6 +11,6 @@ class ItemsController < ApplicationController
   end
 
   def all_items
-    @items = Item.all
+    @items = Item.page params[:page]
   end
 end

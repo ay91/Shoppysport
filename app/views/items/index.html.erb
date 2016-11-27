@@ -1,7 +1,11 @@
 <h1><%= @category.name%></h1>
 
+<%=paginate @items%>
+
 <div class="items-row text-center">
   <% @items.each do |item| %>
     <%=render partial: "item", locals: {item: item}%>
   <%end %>
 </div>
+
+<%=paginate @items%>
