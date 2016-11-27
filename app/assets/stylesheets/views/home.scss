@@ -59,9 +59,40 @@ header {
 
 // items
 .items-row {
-  margin-bottom: 10vh;
+  margin-bottom: 15vh;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
 
-  &:hover {
-    border: 1px solid black;
+  .item-child {
+    flex: 0 0 25%;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+
+    &:hover {
+      border: 1px solid #CFCFCF;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    hr {
+      width: 70%;
+    }
+    h3{
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.8em;
+      line-spacing: -1px;
+      margin-bottom: 5px;
+      color: black;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    h4{
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.5em;
+      color: #ff4d00;
+      text-decoration: none;
+    }
   }
+
+
 }

@@ -16,10 +16,11 @@
   </div>
   <div class="items-bar">
     <ul class="nav navbar-nav navbar-left">
-      <li><%=link_to "Badminton"%></li>
-      <li><%=link_to "Men"%></li>
+      <li><%=link_to "All", "/items/all" %></li>
+      <li><%=link_to "Badminton", category_items_path(Category.find_by(name: "Badminton"))%></li>
+      <li><%=link_to "Men", category_items_path(Category.find_by(name: "Men"))%></li>
       <li><%=link_to "Women"%></li>
-      <li><%=link_to "Tennis"%></li>
+      <li><%=link_to "Tennis", category_items_path(Category.find_by(name: "Tennis"))%></li>
     </ul>
 
     <ul class="nav navbar-nav navbar-right">

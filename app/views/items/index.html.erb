@@ -1,7 +1,7 @@
 <h1><%= @category.name%></h1>
 
-<div class="row">
+<div class="items-row text-center">
   <% @items.each do |item| %>
-  <%=render partial: "item", locals: {item: item}%>
+    <%=render partial: "item", locals: {item: item}%>
   <%end %>
 </div>

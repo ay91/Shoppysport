@@ -1,8 +1,8 @@
-
-<div class="items-row col-sm-4 text-center">
+<div class="item-child">
   <%= link_to category_item_path(item.category, item) do%>
-    <%=image_tag item.image, class: "item-image"%> <br />
-    <%=item.title%>
-    <%=item.price%>
+      <%=image_tag item.image, class: "item-image"%>
+      <hr>
+      <h3><%=item.title%></h3>
+      <h4>RM <%=item.price%></h4>
   <%end%>
 </div>
