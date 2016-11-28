@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/home', to: 'home#index'
 
   resources :categories do
-    resources :items
+    resources :items, only: [:index, :show]
   end
 
   get '/items/all', to: "items#all_items"

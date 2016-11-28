@@ -34,11 +34,13 @@ categories = Category.all
 20.times do
   title = ['Yonex', 'Z-Force', 'Arch-Saber', 'Li Ning', 'Victor', 'Nanoray-Z', 'Voltric Force', 'Carlton', 'EZone', 'VCore', 'VCore Duel', 'Nanospeed', 'Titanium']
   price = rand(100..300)
+  description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
   image =  [File.new("#{Rails.root}/app/assets/images/racket-1.jpg"), File.new("#{Rails.root}/app/assets/images/racket-2.jpg"), File.new("#{Rails.root}/app/assets/images/racket-3.jpg"), File.new("#{Rails.root}/app/assets/images/men-1.jpg"), File.new("#{Rails.root}/app/assets/images/men-2.jpg"), File.new("#{Rails.root}/app/assets/images/men-3.jpg"),
      File.new("#{Rails.root}/app/assets/images/tennis-1.jpg"), File.new("#{Rails.root}/app/assets/images/tennis-2.jpg"), File.new("#{Rails.root}/app/assets/images/tennis-3.jpg")]
   categories.each do |category|
     category.items.create!(title: title[rand(title.length)],
                           price: price,
+                          description: description,
                           image: image[rand(image.length)]
                           )
   end

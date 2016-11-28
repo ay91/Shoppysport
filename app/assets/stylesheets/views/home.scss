@@ -80,7 +80,7 @@ header {
     h3{
       font-family: 'Oswald', sans-serif;
       font-size: 1.8em;
-      line-spacing: -1px;
+      letter-spacing: -1px;
       margin-bottom: 5px;
       color: black;
       text-transform: uppercase;
@@ -130,5 +130,56 @@ nav.pagination {
     height: 25px;
     background: white;
     padding-top: 2px;
+  }
+}
+
+// show items
+
+.item-show {
+  margin-top: 50px;
+
+  .item-image {
+    height: 350px;
+    width: 350px;
+    margin-top: 50px;
+  }
+
+  .item-details {
+    margin-bottom: 50px;
+  }
+
+  .product-snippets {
+    .img-snippets {
+      height: 80px;
+      width: 80px;
+      margin: 0 10px 20px 0;
+    }
+  }
+
+  h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+    color: black;
+    text-transform: uppercase;
+    text-align: left;
+  }
+  h2{
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.0em;
+    letter-spacing: 2px;
+    color: #ff4d00;
+    text-align: left;
+  }
+  h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: grey;
+  }
+  p{
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1em;
+    color: black;
   }
 }

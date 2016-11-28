@@ -1,0 +1,26 @@
+<div class="item-show">
+
+  <div class="col-md-5 text-center">
+    <%=image_tag @item.image, class: "item-image"%>
+  </div>
+
+  <div class="item-details col-md-6">
+    <h1><%=@item.title%></h1>
+
+    <div class="product-snippets">
+      <%=image_tag '100-percent-authentic.svg', class: 'img-snippets'%>
+      <%=image_tag 'clash-support.svg', class: 'img-snippets'%>
+      <%=image_tag 'free-shipping.svg', class: 'img-snippets'%>
+    </div>
+
+    <p><i>This item ships for free</i></p>
+
+    <h2>RM<%=@item.price%></h2>
+    <h3><%=@category.name%></h3>
+    <hr>
+    <h1>quantity</h1>
+    <%=link_to "Add To Cart", "#", class: 'btn btn-primary'%>
+    <hr>
+    <p><%=@item.description%></p>
+  </div>
+</div>
