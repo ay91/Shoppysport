@@ -107,3 +107,28 @@ nav.pagination {
   margin-bottom: 50px;
   margin-left: 20px;
 }
+
+// header search form
+
+#search_form {
+  float: left;
+  background-color: #222;
+
+  #search_field {
+    position: absolute;
+    width: 250px;
+    height: 25px;
+    right: 25px;
+    margin-top: 12px;
+    border: transparent;
+    padding-left: 5px;
+  }
+
+  #search-btn {
+    border: none;
+    margin-top: 12px;
+    height: 25px;
+    background: white;
+    padding-top: 2px;
+  }
+}

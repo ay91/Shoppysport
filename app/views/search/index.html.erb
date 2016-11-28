@@ -1,0 +1,11 @@
+<h1>Search Result</h1>
+
+<%=paginate @items%>
+
+<div class="items-row text-center">
+  <% @items.each do |item| %>
+    <%=render partial: "items/item", locals: {item: item}%>
+  <%end %>
+</div>
+
+<%=paginate @items%>

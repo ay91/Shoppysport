@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'search/index'
+
   get 'items/index'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -14,6 +16,7 @@ Rails.application.routes.draw do
   end
 
   get '/items/all', to: "items#all_items"
+  get '/search', to: "search#index"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html\
 end

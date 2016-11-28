@@ -24,7 +24,12 @@
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
-      <li><%=link_to "Search"%></li>
+      <li>
+        <%=form_for(:search, url: search_path, html: { id: 'search_form'}, method: :get) do |f|%>
+          <%=f.text_field :keyword, id: "search_field", required: true%>
+          <button type="submit" id="search-btn"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+        <%end%>
+      </li>
       <li><%=link_to "Cart"%></li>
     </ul>
   </div>
