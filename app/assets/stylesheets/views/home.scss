@@ -183,3 +183,106 @@ nav.pagination {
     color: black;
   }
 }
+
+// flash message
+
+.flash-messages {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+
+  .p {
+    margin: 0;
+  }
+
+  .alert {
+    border: 0;
+  }
+
+  .alert-success {
+    background-color: green;
+    color: white;
+  }
+
+  .alert-danger {
+    background-color: red;
+    color: white;
+  }
+
+  .close {
+    line-height: 0;
+    padding: 7px;
+    font-size: 40px;
+    opacity: 1;
+    color: white;
+  }
+
+  .list-styling {
+    width: 500px;
+    margin: 0 auto;
+    list-style-type: none;
+    text-align: left;
+  }
+
+  .message {
+    text-align: center;
+    font-size: 16px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
+  }
+
+}
+
+//cart item
+.table {
+  width: 70%;
+  margin: 0 auto;
+  border: 1px solid black;
+  margin-top: 20px;
+
+  .cart-row {
+    height: 150px;
+  }
+
+  .cart-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  thead tr {
+    height: 50px;
+    font-size: 1.5em;
+    vertical-align: middle;
+  }
+
+  th.image {width:80px}
+  th.title {width:100px}
+  th.price {width:80px}
+  th.quantity {width:100px}
+  th.total {width:80px}
+
+  .update-btn {
+    width: 80px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+  }
+
+  .remove-btn {
+    width: 80px;
+    margin-left: 20px;
+  }
+
+  #cart-quantity-field {
+    height: 32px;
+    width: 80px;
+    margin: 0 20px 40px;
+    padding-left: 10px;
+    font-size: 1.2em;
+  }
+}
+
+#total-cost {
+  margin-left: 250px;
+  margin-top: 40px;
+}

@@ -1,0 +1,15 @@
+<tr id="cart-row-<%= item.id%>" class="cart-row">
+  <td><%=image_tag item.image, class: "cart-image"%></td>
+  <td><h3><%=item.title%></h3></td>
+  <td><h4>RM <%=item.price%></h4></td>
+  <td>
+    <div class="cart-item-quantity">
+      <%=form_for(item, url: update_item_path(id: item.id), method: :post, html: { id: 'update_item_form'}, remote: true) do |f|%>
+        <%=f.number_field :quantity, min: 1, value: item.quantity, id: 'cart-quantity-field', required: true %>
+        <%=f.submit "Update", class: "btn btn-primary update-btn"%>
+      <%end%>
+      <%=link_to "Remove", remove_item_path(id: item.id), class: 'btn btn-danger remove-btn', method: :post, remote: true%>
+    </div>
+  </td>
+  <td class="total-price"><h4>RM <%=item.price * item.quantity.to_i%></h4></td>
+</tr>

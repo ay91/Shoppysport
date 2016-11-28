@@ -1,0 +1,3 @@
+$('#flash-messages').html("<%=j render partial: 'shared/flash_message'%>");
+$("#cart-row-<%=@item.id%> .total-price").html("<%= @item.price * @quantity%>");
+$("#total-cost").html("<%= @total_cost%>");

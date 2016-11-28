@@ -17,6 +17,10 @@ Rails.application.routes.draw do
 
   get '/items/all', to: "items#all_items"
   get '/search', to: "search#index"
+  get :cart, to: 'cart#show'
+  post :add_item, to: 'cart#add_item'
+  post :update_item, to: 'cart#update_item'
+  post :remove_item, to: 'cart#remove_item'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html\
 end
