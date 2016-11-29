@@ -38,6 +38,10 @@ class CartController < ApplicationController
     @item = Item.find(params[:id])
     @quantity = params[:item][:quantity].to_i
     flash.now[:success] = "#{@item.title} quantity have been updated"
+    # refactoring required
+    updated_items = []
+    @items.each {|k,v| updated_items << (Item.find_by(id: k)).price * v.to_i}
+    @total_sum = updated_items.inject {|total, sum| total += sum}
   end
 
   def remove_item
@@ -66,10 +70,6 @@ class CartController < ApplicationController
   end
 
   private
-
-  def quantity
-    params[item][quantity]
-  end
 
   def cart_items
     @cart_items = cookies.permanent.encrypted.signed[:cart]

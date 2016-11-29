@@ -1,3 +1,7 @@
 $('#flash-messages').html("<%=j render partial: 'shared/flash_message'%>");
-$("#cart-row-<%=@item.id%> .total-price").html("<%= @item.price * @quantity%>");
-$("#total-cost").html("<%= @total_cost%>");
+$("#flash-messages").fadeIn("fast");
+$("#flash-messages").delay(1500).fadeOut("fast");
+$("#cart-row-<%=@item.id%> .total-price").html("RM <%= @item.price * @quantity%>");
+$("#total-cost").html("Total Spending: RM <%= @total_sum%>");
+$("#total-cost").css({"font-family":"'Oswald', sans-serif", "font-size":"1.8em"})
+$("#cart-row-<%=@item.id%> .total-price").css({"font-family":"'Oswald', sans-serif", "font-size":"1.5em"});

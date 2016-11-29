@@ -2,21 +2,26 @@
   <div class="container">
     <%=link_to "ShoppySport", root_path, id: "logo"%>
     <nav>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right right-links">
         <%if user_signed_in? %>
           <li><%=image_tag "#{current_user.image}"%></li>
-          <li><%=link_to "#{current_user.name}"%></li>
-          <li><%=link_to "Logout", destroy_user_session_path, method: :delete%></li>
+          <%if current_user.provider?%>
+            <li><%=link_to "#{current_user.name}"%></li>
+          <%else%>
+            <li><%=link_to "#{current_user.name}", edit_user_registration_path%></li>
+          <%end%>
+          <li><%=link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn btn-danger' %></li>
         <%else%>
-          <li><%=link_to "Login", new_user_session_path %></li>
-          <li><%=link_to "Register", new_user_registration_path%></li>
+          <li><%=link_to "Login", new_user_session_path, class: 'btn btn-success' %></li>
+          <li><%=link_to "Register", new_user_registration_path, class: 'btn btn-primary'%></li>
         <%end%>
       </ul>
     </nav>
   </div>
   <div class="items-bar">
-    <ul class="nav navbar-nav navbar-left">
+    <ul class="nav navbar-nav navbar-left left-links">
       <li><%=link_to "All", "/items/all" %></li>
+      <!-- Refactor required -->
       <li><%=link_to "Badminton", category_items_path(Category.find_by(name: "Badminton"))%></li>
       <li><%=link_to "Men", category_items_path(Category.find_by(name: "Men"))%></li>
       <li><%=link_to "Women"%></li>
@@ -30,7 +35,7 @@
           <button type="submit" id="search-btn"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
         <%end%>
       </li>
-      <li><%=link_to "Cart", cart_path%></li>
+        <li><%=link_to "Cart", cart_path, class: "cart"%></li>
     </ul>
   </div>
 </header>

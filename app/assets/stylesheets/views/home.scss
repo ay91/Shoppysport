@@ -25,8 +25,41 @@ header {
   .container {
     width: 90%;
   }
+
+  .right-links {
+    font-size: 1em;
+    font-weight: bold;
+    margin-right: 200px;
+    a.btn {
+      height: 30px;
+      margin-top: 10px;
+      margin-right: 20px;
+      width: 80px;
+      color: white;
+      line-height: 30%;
+    }
+    // font-size: 1.2em;
+    // font-family: 'Oswald', sans-serif;
+  }
+
   .items-bar {
     width: 90%;
+
+    .left-links {
+      margin-left: 20px;
+      font-size: 1.4em;
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 2px;
+      color: white;
+    }
+
+    .cart {
+      font-size: 1.4em;
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 2px;
+      color: white;
+      margin-left: 10px;
+    }
   }
 }
 
@@ -182,6 +215,15 @@ nav.pagination {
     font-size: 1.1em;
     color: black;
   }
+  .addtocart{
+    width: 100px;
+
+    #item-quantity-field {
+      height: 35px;
+      padding-left: 20px;
+      font-size: 1.2em;
+    }
+  }
 }
 
 // flash message
@@ -211,6 +253,16 @@ nav.pagination {
     color: white;
   }
 
+  .alert-alert {
+    background-color: red;
+    color: white;
+  }
+
+  .alert-notice {
+    background-color: green;
+    color: white;
+  }
+
   .close {
     line-height: 0;
     padding: 7px;
@@ -235,10 +287,13 @@ nav.pagination {
 }
 
 //cart item
-.table {
+table, th, td {
+  border: 1px solid black;
+}
+
+table {
   width: 70%;
   margin: 0 auto;
-  border: 1px solid black;
   margin-top: 20px;
 
   .cart-row {
@@ -254,6 +309,10 @@ nav.pagination {
     height: 50px;
     font-size: 1.5em;
     vertical-align: middle;
+  }
+
+  th {
+    text-align: center;
   }
 
   th.image {width:80px}

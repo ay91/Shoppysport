@@ -22,7 +22,7 @@
     <div class="addtocart">
       <%=form_for(@item, url: add_item_path(id: @item.id), method: :post, html: { id: "add_item_form"}, remote: true) do |f| %>
         <div class="item-quantity">
-          <%=f.number_field :quantity, min: 1, value: 1, required: true %>
+          <%=f.number_field :quantity, id: 'item-quantity-field', min: 1, value: 1, required: true %>
         </div>
         <%=f.submit "Add To Cart", class: "btn btn-primary"%>
       <%end%>
