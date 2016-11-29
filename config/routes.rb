@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :items, only: [:index, :show]
   end
 
-  resources :checkout, only: [:create, :new]
+  resources :checkout, only: [:create, :new, :show]
 
   get '/items/all', to: "items#all_items"
   get '/search', to: "search#index"

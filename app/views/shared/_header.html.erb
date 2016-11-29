@@ -38,7 +38,14 @@
           <button type="submit" id="search-btn"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
         <%end%>
       </li>
-        <li><%=link_to "Cart", cart_path, class: "cart"%></li>
+        <li><%=link_to "Cart", cart_path, class: "bottom-right-links"%></li>
+        <li>
+          <%if current_user.admin?%>
+            <%=link_to "Customer Order", "#", class: "bottom-right-links"%>
+          <%else%>
+            <%=link_to "Order", "#", class: "bottom-right-links"%>
+          <%end%>
+        </li>
     </ul>
   </div>
 </header>
