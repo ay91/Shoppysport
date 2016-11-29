@@ -18,7 +18,7 @@ class CheckoutController < ApplicationController
       order = Order.create do
         transaction_id = result.transaction.id
         amount = result.transaction.amount
-        user_id = current_user&.id
+        user_id = current_user.id
         status = "pending"
       end
       @items.each {|item| order.ordered_items.create(item_id: item.id)}
