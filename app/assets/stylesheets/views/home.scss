@@ -29,7 +29,7 @@ header {
   .right-links {
     font-size: 1em;
     font-weight: bold;
-    margin-right: 200px;
+    margin-right: 150px;
     a.btn {
       height: 30px;
       margin-top: 10px;
@@ -38,8 +38,10 @@ header {
       color: white;
       line-height: 30%;
     }
-    // font-size: 1.2em;
-    // font-family: 'Oswald', sans-serif;
+    a.btn.btn-primary.admin-btn {
+      width: 150px;
+    }
+
   }
 
   .items-bar {
@@ -287,6 +289,10 @@ nav.pagination {
 }
 
 //cart item
+.checkout-btn {
+  margin-left: 250px;
+}
+
 table, th, td {
   border: 1px solid black;
 }
@@ -295,6 +301,8 @@ table {
   width: 70%;
   margin: 0 auto;
   margin-top: 20px;
+  margin-bottom: 100px;
+  overflow: auto;
 
   .cart-row {
     height: 150px;
@@ -344,4 +352,28 @@ table {
 #total-cost {
   margin-left: 250px;
   margin-top: 40px;
+}
+
+// payment
+
+.payment-container {
+  margin: 50px 50px 50px 50px;
+  width: 40%;
+}
+
+.order-review {
+  padding-left: 50px;
+
+  table, tr, td {
+    border: none;
+  }
+  table {
+    margin-left: 0;
+    td.title {width: 50px}
+    td.quantity {width: 50px}
+    td.price {width: 50px}
+    td.total {
+      border-top: 1px solid black;
+    }
+  }
 }

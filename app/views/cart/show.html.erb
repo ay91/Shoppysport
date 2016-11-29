@@ -1,6 +1,9 @@
-<div id="total-cost">
-  <h3><strong>Total Spending</strong>:   RM <%=@total_cost%></h3>
-</div>
+<%if @total_cost%>
+  <div id="total-cost">
+    <h3><strong>Total Spending</strong>:   RM <%=@total_cost%></h3>
+  </div>
+  <%=link_to "Checkout", new_checkout_path, class: "btn btn-primary checkout-btn"%>
+<%end%>
 
 <div class="table-responsive">
   <table class="text-center">

@@ -5,6 +5,7 @@ class CartController < ApplicationController
   def show
     if @cart_items
       items = JSON.parse(@cart_items)
+      @total_cost = 0
       @items = []
 
       items.each do |k,v|
@@ -12,9 +13,9 @@ class CartController < ApplicationController
         item.define_singleton_method(:quantity) do
           v
         end
+        @total_cost += item.price * v.to_i
         @items << item
       end
-      @total_cost = total_cost(@items)
     end
   end
 
@@ -58,15 +59,6 @@ class CartController < ApplicationController
 
     @item = Item.find(params[:id])
     flash.now[:danger] = "#{@item.title} has been removed from cart"
-  end
-
-  def total_cost(items)
-    total_cost = 0
-    items.each do |item|
-      item_cost = item.price * item.quantity.to_i
-      total_cost += item_cost
-    end
-    total_cost
   end
 
   private

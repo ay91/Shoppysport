@@ -47,6 +47,8 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    braintree (2.66.0)
+      builder (>= 2.0.0)
     builder (3.2.2)
     byebug (9.0.6)
     capybara (2.8.1)
@@ -464,6 +466,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
+  braintree
   byebug
   capybara
   carrierwave (= 0.11.2)
@@ -490,6 +493,7 @@ DEPENDENCIES
   rails (~> 5.0.0, >= 5.0.0.1)
   rails-controller-testing
   rails_admin (~> 1.0)
+  responders
   rspec-rails
   sass-rails (~> 5.0)
   searchkick

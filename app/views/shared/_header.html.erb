@@ -10,6 +10,9 @@
           <%else%>
             <li><%=link_to "#{current_user.name}", edit_user_registration_path%></li>
           <%end%>
+          <% if current_user.admin?%>
+            <li><%=link_to "Admin Panel", "/admin", class: 'btn btn-primary admin-btn'%></li>
+          <%end%>
           <li><%=link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn btn-danger' %></li>
         <%else%>
           <li><%=link_to "Login", new_user_session_path, class: 'btn btn-success' %></li>
