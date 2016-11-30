@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  paginates_per 10
+  paginates_per 12
   belongs_to :category
   has_many :ordered_items
   has_many :orders, through: :ordered_items

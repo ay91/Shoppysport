@@ -24,10 +24,9 @@
   <div class="items-bar">
     <ul class="nav navbar-nav navbar-left left-links">
       <li><%=link_to "All", "/items/all" %></li>
-      <!-- Refactor required -->
-      <li><%=link_to "Badminton", category_items_path(Category.find_by(name: "Badminton"))%></li>
-      <li><%=link_to "Men", category_items_path(Category.find_by(name: "Men"))%></li>
-      <li><%=link_to "Tennis", category_items_path(Category.find_by(name: "Tennis"))%></li>
+      <%categories.each do |category|%>
+        <li><%=link_to category.name, category_items_path(category)%></li>
+      <%end%>
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
