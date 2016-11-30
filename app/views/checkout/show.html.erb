@@ -1,5 +1,82 @@
-<h3>This is your order</h3>
-
-<%=@ordered_items.each do |oi|%>
-  <%=@item.title%>
-<%end%>
+<div class="checkout-container text-center">
+  <%= link_to "Print Page", '#', class: "btn btn-primary",onclick: 'window.print();return false;' %>
+  <section class="customer-order">
+    <h3>This is your order</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <td>Title</td>
+          <td>Price</td>
+          <td>Quantity</td>
+          <td>Subtotal</td>
+        </tr>
+      </thead>
+      <tbody>
+        <%@ordered_items.each do |oi|%>
+        <tr>
+          <%@item = Item.find_by(id: oi.item_id)%>
+          <td><%=@item.title%></td>
+          <td>RM <%=@item.price%></td>
+          <td><%=oi.quantity%></td>
+          <td>RM <%=@item.price * oi.quantity%></td>
+        </tr>
+        <%end%>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>Status: <%=@order.status%></td>
+          <td>Total Sales = RM <%=@order.total_cost%></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <br />
+  <section class="transaction-details">
+    <h3>Transaction Details</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <td>Transaction ID</td>
+          <td>Transaction Type</td>
+          <td>Transaction Amount</td>
+          <td>Transaction Status</td>
+          <td>Transaction created at</td>
+          <td>Transaction updated at</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%=@transaction.id%></td>
+          <td><%=@transaction.type%></td>
+          <td>RM <%=@transaction.amount%></td>
+          <td><%=@transaction.status%></td>
+          <td><%=@transaction.created_at%></td>
+          <td><%=@transaction.updated_at%></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <br />
+  <section class="Payment Details">
+    <%if @transaction.credit_card_details.token.nil?%>
+    <h3>Payment method: Paypal</h3>
+    <%else%>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <td>Card Last 4 Digits</td>
+          <td>Card Type</td>
+          <td>Expiration Date</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%=@transaction.credit_card_details.last_4%></td>
+          <td><%=@transaction.credit_card_details.card_type%></td>
+          <td><%=@transaction.credit_card_details.expiration_date%></td>
+        </tr>
+      </tbody>
+    </table>
+    <%end%>
+  </section>
+</div>

@@ -13,15 +13,10 @@ class CheckoutController < ApplicationController
         submit_for_settlement: true
       }
     )
-
     if result.success?
       create_order(result.transaction.id)
-      redirect_to checkout_path(result.transaction.id)
-      # @items.each {|item| order.ordered_items.create(item_id: item.id)}
-
-
       flash[:success] = "We have received your payment and will be shipping shortly"
-      redirect_to root_path
+      redirect_to checkout_path(result.transaction.id)
     else
       flash[:danger] = "We have some issues placing your order. Please try again."
       redirect_to new_checkout_path
@@ -30,6 +25,7 @@ class CheckoutController < ApplicationController
 
   def show
     # get orders
+    @transaction = Braintree::Transaction.find(params[:id])
     @transaction_id = params[:id]
     @order = Order.find_by(transaction_id: @transaction_id)
     @ordered_items = @order.ordered_items
@@ -54,6 +50,7 @@ class CheckoutController < ApplicationController
     @order.transaction_id = transaction_id
     @order.total_cost = @total_cost
     @order.user_id = current_user.id
+    @order.status = 1
 
     if @order.save
 
