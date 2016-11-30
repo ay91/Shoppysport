@@ -13,4 +13,4 @@
  ```                                                                                                                          
                                                                                                                            
 
-Live Website link <a href="https://shoppysport.herokuapp.com/">here</a>
+Live Website link <a href="https://shoppysport.herokuapp.com/" target="_blank">here</a>
