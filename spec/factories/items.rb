@@ -1,12 +1,13 @@
+include ActionDispatch::TestProcess
+
 FactoryGirl.define do
   factory :item do
     title "item"
     price 100
     description "description"
-    category_id {create(:category).id}
 
     trait :with_image do
-      File.new("#{Rails.root}/app/assets/images/racket-1.jpg")
+      image { fixture_file_upload("#{::Rails.root}/spec/fixtures/racket-1.jpg") }
     end
 
     trait :sequenced_title do

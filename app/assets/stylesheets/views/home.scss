@@ -103,7 +103,7 @@ header {
     flex: 0 0 25%;
     margin-bottom: 50px;
     box-sizing: border-box;
-
+    
     &:hover {
       border: 1px solid #CFCFCF;
       cursor: pointer;
@@ -112,6 +112,7 @@ header {
     hr {
       width: 70%;
     }
+
     h3{
       font-family: 'Oswald', sans-serif;
       font-size: 1.8em;
